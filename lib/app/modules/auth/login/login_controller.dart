@@ -59,11 +59,11 @@ class LoginController extends DefaultChangeNotifier {
       if (user != null) {
         success();
       } else {
-        _userServices.googleLogout();
+        _userServices.logout();
         setError('Erro ao logar com o Google');
       }
     } on AuthException catch (e) {
-      _userServices.googleLogout();
+      _userServices.logout();
 
       setError(e.message);
     } finally {

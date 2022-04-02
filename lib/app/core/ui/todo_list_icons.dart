@@ -11,7 +11,7 @@
 ///      fonts:
 ///       - asset: fonts/TodoListIcon.ttf
 ///
-/// 
+///
 /// * Font Awesome 5, Copyright (C) 2016 by Dave Gandy
 ///         Author:    Dave Gandy
 ///         License:   SIL (https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt)
@@ -25,6 +25,10 @@ class TodoListIcon {
   static const _kFontFam = 'TodoListIcon';
   static const String? _kFontPkg = null;
 
-  static const IconData eye = IconData(0xf06e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData eye_slash = IconData(0xf070, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData eye =
+      IconData(0xf06e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData eye_slash =
+      IconData(0xf070, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData filter =
+      IconData(0xf0b0, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

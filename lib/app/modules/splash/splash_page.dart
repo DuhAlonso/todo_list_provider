@@ -11,18 +11,7 @@ class SplashPage extends StatelessWidget {
         title: const Text(''),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            TodoListLogo(),
-            TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/login');
-                },
-                child: Text('Login'))
-          ],
-        ),
+        child: TodoListLogo(),
       ),
     );
   }
