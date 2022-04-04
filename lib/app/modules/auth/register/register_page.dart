@@ -41,30 +41,9 @@ class _RegisterPageState extends State<RegisterPage> {
         context: context,
         successCallBack: (notifier, listenerInstance) {
           listenerInstance.dispose();
-          Navigator.of(context).pop();
+
           Messages.of(context).showInfo('Cadastrado com Sucesso!');
         });
-    // context.read<RegisterController>().addListener(() {
-    //   final controller = context.read<RegisterController>();
-    //   var success = controller.success;
-    //   var error = controller.error;
-    //   if (success) {
-    //     ScaffoldMessenger.of(context).showSnackBar(
-    //       SnackBar(
-    //         content: Text('Cadastrado com Sucesso!!'),
-    //         backgroundColor: Colors.green,
-    //       ),
-    //     );
-    //     Navigator.of(context).pop();
-    //   } else if (error != null && error.isNotEmpty) {
-    //     ScaffoldMessenger.of(context).showSnackBar(
-    //       SnackBar(
-    //         content: Text(error),
-    //         backgroundColor: Colors.red,
-    //       ),
-    //     );
-    //   }
-    // });
 
     super.initState();
   }

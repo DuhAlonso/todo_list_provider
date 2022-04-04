@@ -1,8 +1,33 @@
 import 'package:flutter/material.dart';
+
 import 'package:todo_list_provider/app/core/ui/theme_extensions.dart';
+import 'package:todo_list_provider/app/models/task_filter_enum.dart';
+import 'package:todo_list_provider/app/models/total_tasks_model.dart';
 
 class TodoCardFilter extends StatelessWidget {
-  const TodoCardFilter({Key? key}) : super(key: key);
+  final String label;
+  final TaskFilterEnum taskFilter;
+  final TotalTasksModel? totalTasks;
+  final bool selected;
+
+  TodoCardFilter({
+    Key? key,
+    required this.label,
+    required this.taskFilter,
+    this.totalTasks,
+    required this.selected,
+  }) : super(key: key);
+
+  double _getPorcentFinish() {
+    final total = totalTasks?.totalTasks ?? 0.0;
+    final totalFinish = totalTasks?.totalTasksFinish ?? 0.1;
+    if (total == 0) {
+      return 0.0;
+    }
+
+    final percent = (totalFinish * 100) / total;
+    return percent / 100;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +39,7 @@ class TodoCardFilter extends StatelessWidget {
       margin: EdgeInsets.only(right: 10),
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: context.primaryColor,
+        color: selected ? context.primaryColor : Colors.white,
         border: Border.all(
           width: 1,
           color: Colors.grey.withOpacity(.8),
@@ -25,19 +50,32 @@ class TodoCardFilter extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            '10 TASKS',
-            style:
-                context.titleStyle.copyWith(fontSize: 10, color: Colors.white),
+            '${totalTasks?.totalTasks ?? 0} TASKS',
+            style: context.titleStyle.copyWith(
+                fontSize: 10, color: selected ? Colors.white : Colors.grey),
           ),
           Text(
-            'HOJE',
+            label.toUpperCase(),
             style: TextStyle(
-                fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: selected ? Colors.white : Colors.black),
           ),
-          LinearProgressIndicator(
-            backgroundColor: context.primaryColorLight,
-            valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-            value: 0.5,
+          TweenAnimationBuilder<double>(
+            tween: Tween(
+              begin: 0.0,
+              end: _getPorcentFinish(),
+            ),
+            duration: Duration(seconds: 1),
+            builder: (context, value, child) {
+              return LinearProgressIndicator(
+                backgroundColor:
+                    selected ? context.primaryColorLight : Colors.grey.shade400,
+                valueColor: AlwaysStoppedAnimation<Color>(
+                    selected ? Colors.white : context.primaryColor),
+                value: value,
+              );
+            },
           )
         ],
       ),

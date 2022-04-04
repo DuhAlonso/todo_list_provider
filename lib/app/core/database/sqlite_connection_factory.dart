@@ -24,15 +24,16 @@ class SqliteConnectionFactory {
     if (_db == null) {
       // sincroniza e impede que abra 2 conexões ao mesmo tempo
       await _lock.synchronized(() async {
-        _db ??
-            await openDatabase(
-              dataBasePathFinal,
-              version: _version,
-              onConfigure: _onConfigure,
-              onCreate: _onCreate,
-              onUpgrade: _onUpgrade,
-              onDowngrade: _onDowngrade,
-            );
+        if (_db == null) {
+          _db = await openDatabase(
+            dataBasePathFinal,
+            version: _version,
+            onConfigure: _onConfigure,
+            onCreate: _onCreate,
+            onUpgrade: _onUpgrade,
+            onDowngrade: _onDowngrade,
+          );
+        }
       });
     }
     return _db!;
