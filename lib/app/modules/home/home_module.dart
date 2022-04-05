@@ -27,7 +27,9 @@ class HomeModule extends TodoListModule {
             )
           ],
           routers: {
-            '/home': (context) => HomePage(),
+            '/home': (context) => HomePage(
+                  homeController: context.read(),
+                ),
           },
         );
 }

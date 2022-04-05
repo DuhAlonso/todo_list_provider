@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:todo_list_provider/app/models/tasks_model.dart';
 
 class Task extends StatelessWidget {
-  const Task({Key? key}) : super(key: key);
+  final TasksModel model;
+  final dateFormat = DateFormat('dd/MM/y');
+  Task({Key? key, required this.model}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -9,31 +13,31 @@ class Task extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(color: Colors.grey),
         ],
       ),
-      margin: EdgeInsets.symmetric(vertical: 5),
+      margin: const EdgeInsets.symmetric(vertical: 5),
       child: IntrinsicHeight(
         child: ListTile(
-          contentPadding: EdgeInsets.all(8),
+          contentPadding: const EdgeInsets.all(8),
           leading: Checkbox(
-            value: true,
+            value: model.finished,
             onChanged: (v) {},
           ),
           title: Text(
-            'Descrição',
-            style:
-                TextStyle(decoration: true ? TextDecoration.lineThrough : null),
+            model.description,
+            style: TextStyle(
+                decoration: model.finished ? TextDecoration.lineThrough : null),
           ),
           subtitle: Text(
-            '20/02/2022',
-            style:
-                TextStyle(decoration: true ? TextDecoration.lineThrough : null),
+            dateFormat.format(model.dateTime),
+            style: TextStyle(
+                decoration: model.finished ? TextDecoration.lineThrough : null),
           ),
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
-              side: BorderSide(width: 1)),
+              side: const BorderSide(width: 1)),
         ),
       ),
     );
