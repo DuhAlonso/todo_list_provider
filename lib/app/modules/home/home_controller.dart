@@ -12,6 +12,9 @@ class HomeController extends DefaultChangeNotifier {
   TotalTasksModel? weekTotalTasks;
   List<TasksModel> alltask = [];
   List<TasksModel> filteredTasks = [];
+  DateTime? initialDayOfWeek;
+  DateTime? selectedDay;
+  bool showFinishingTasks = false;
   var filterSelected = TaskFilterEnum.today;
 
   HomeController({required TasksService tasksService})
@@ -60,12 +63,35 @@ class HomeController extends DefaultChangeNotifier {
         break;
       case TaskFilterEnum.week:
         final weekModel = await _tasksService.getWeek();
+        initialDayOfWeek = weekModel.startDate;
         tasks = weekModel.tasks;
         break;
     }
     filteredTasks = tasks;
     alltask = tasks;
+
+    if (filter == TaskFilterEnum.week) {
+      if (selectedDay != null) {
+        filterByDay(selectedDay!);
+      } else if (initialDayOfWeek != null) {
+        filterByDay(initialDayOfWeek!);
+      }
+    } else {
+      selectedDay = null;
+    }
+    if (!showFinishingTasks) {
+      filteredTasks = filteredTasks.where((task) => !task.finished).toList();
+    }
+
     hideLoading();
+    notifyListeners();
+  }
+
+  void filterByDay(DateTime date) {
+    selectedDay = date;
+    filteredTasks = alltask.where((task) {
+      return task.dateTime == date;
+    }).toList();
     notifyListeners();
   }
 
@@ -73,5 +99,20 @@ class HomeController extends DefaultChangeNotifier {
     await findTasks(filter: filterSelected);
     await loadTotalTasks();
     notifyListeners();
+  }
+
+  Future<void> checkOrUncheckTask(TasksModel task) async {
+    showLoadingAndResetState();
+    notifyListeners();
+
+    final taskUpdate = task.copyWith(finished: !task.finished);
+    await _tasksService.checkOrUncheckTask(taskUpdate);
+    hideLoading();
+    refreshPage();
+  }
+
+  void showOrHideFinishTasks() {
+    showFinishingTasks = !showFinishingTasks;
+    refreshPage();
   }
 }
