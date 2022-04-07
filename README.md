@@ -56,12 +56,12 @@ Olha, não foi fácil, aprendi e descobri inúmeras coisas, novas funcionalidade
 <h2>Screenshots</h2>
 <p>
 
-<img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshot/todolistprovider.gif" width="250"> <img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshots/Screenshot1.png" width="250"> <img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshot/Screenshot2.png" width="250"> 
+<img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshots/todolistprovider.gif" width="250"> <img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshots/Screenshot1.png" width="250"> <img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshots/Screenshot2.png" width="250"> 
 
-<img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshot/Screenshot3.png" width="250"> <img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshot/Screenshot4.png" width="250"> <img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshot/Screenshot5.png" width="250"> 
+<img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshots/Screenshot3.png" width="250"> <img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshots/Screenshot4.png" width="250"> <img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshots/Screenshot5.png" width="250"> 
 
 
-<img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshot/Screenshot6.png" width="250"> <img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshot/Screenshot7.png" width="250"> <img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshot/Screenshot8.png" width="250">
+<img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshots/Screenshot6.png" width="250"> <img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshots/Screenshot7.png" width="250"> <img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshots/Screenshot8.png" width="250">
 </p>
 
 <h2>No Futuro</h2>
