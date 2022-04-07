@@ -21,26 +21,45 @@ class Task extends StatelessWidget {
       ),
       margin: const EdgeInsets.symmetric(vertical: 5),
       child: IntrinsicHeight(
-        child: ListTile(
-          contentPadding: const EdgeInsets.all(8),
-          leading: Checkbox(
-            value: model.finished,
-            onChanged: (v) =>
-                context.read<HomeController>().checkOrUncheckTask(model),
+        child: Dismissible(
+          key: Key(DateTime.now().millisecondsSinceEpoch.toString()),
+          onDismissed: (d) {
+            context.read<HomeController>().deleteTask(model.id);
+          },
+          direction: DismissDirection.endToStart,
+          background: Container(
+            color: Colors.red,
+            child: Padding(
+              padding: const EdgeInsets.only(right: 20),
+              child: Icon(
+                Icons.delete_forever,
+                color: Colors.white,
+              ),
+            ),
           ),
-          title: Text(
-            model.description,
-            style: TextStyle(
-                decoration: model.finished ? TextDecoration.lineThrough : null),
+          child: ListTile(
+            contentPadding: const EdgeInsets.all(8),
+            leading: Checkbox(
+              value: model.finished,
+              onChanged: (v) =>
+                  context.read<HomeController>().checkOrUncheckTask(model),
+            ),
+            title: Text(
+              model.description,
+              style: TextStyle(
+                  decoration:
+                      model.finished ? TextDecoration.lineThrough : null),
+            ),
+            subtitle: Text(
+              dateFormat.format(model.dateTime),
+              style: TextStyle(
+                  decoration:
+                      model.finished ? TextDecoration.lineThrough : null),
+            ),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+                side: const BorderSide(width: 1)),
           ),
-          subtitle: Text(
-            dateFormat.format(model.dateTime),
-            style: TextStyle(
-                decoration: model.finished ? TextDecoration.lineThrough : null),
-          ),
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-              side: const BorderSide(width: 1)),
         ),
       ),
     );

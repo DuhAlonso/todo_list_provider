@@ -41,6 +41,5 @@ class HomeTasks extends StatelessWidget {
         ],
       ),
     );
-    ;
   }
 }

@@ -115,4 +115,14 @@ class HomeController extends DefaultChangeNotifier {
     showFinishingTasks = !showFinishingTasks;
     refreshPage();
   }
+
+  Future<void> clearTableTodo() async {
+    await _tasksService.clearTableTodo();
+  }
+
+  Future<void> deleteTask(int id) async {
+    await _tasksService.delete(id);
+    refreshPage();
+    notifyListeners();
+  }
 }

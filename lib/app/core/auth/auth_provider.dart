@@ -13,7 +13,10 @@ class AuthProvider extends ChangeNotifier {
   })  : _firebaseAuth = firebaseAuth,
         _userServices = userServices;
 
-  Future<void> logout() => _userServices.logout();
+  Future<void> logout() {
+    return _userServices.logout();
+  }
+
   User? get user => _firebaseAuth.currentUser;
 
   //Ficar escutando o firebase ao longo da aplicação

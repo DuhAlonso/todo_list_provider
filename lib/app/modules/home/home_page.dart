@@ -32,6 +32,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
 
     WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
+      widget._homeController.refreshPage();
       widget._homeController.loadTotalTasks();
       widget._homeController.findTasks(filter: TaskFilterEnum.today);
     });

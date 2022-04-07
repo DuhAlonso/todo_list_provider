@@ -30,9 +30,7 @@ class _LoginPageState extends State<LoginPage> {
     DefaultListenerNotifier(changeNotifier: context.read<LoginController>())
         .listener(
       context: context,
-      successCallBack: (notifier, listenerInstance) {
-        Messages.of(context).showInfo('LOGADO');
-      },
+      successCallBack: (notifier, listenerInstance) {},
       everCallBack: (notifier, listenerinstance) {
         if (notifier is LoginController) {
           if (notifier.hasInfo) {
