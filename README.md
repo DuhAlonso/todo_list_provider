@@ -10,7 +10,7 @@ Aplicativo criado no curso Academia do Flutter
 
    - [📖 Sobre o App](#Sobre-o-App)
    - [👨🏽‍💻 Desenvolvimento](#Sobre-o-desenvolvimento)
-   - [❓ Screenshots](#Desafios)
+   - [❓ Desafios](#Desafios)
    - [📱 Screenshots](#Screenshots)
    - [🤔 No Futuro](#No-Futuro)
    - [📞 Contato](#-d%C3%BAvida-cr%C3%ADtica-elogio-ou-sugest%C3%A3o)
@@ -56,7 +56,7 @@ Olha, não foi fácil, aprendi e descobri inúmeras coisas, novas funcionalidade
 <h2>Screenshots</h2>
 <p>
 
-<img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshot/todolistprovider.gif" width="250"> <img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshot/Screenshot1.png" width="250"> <img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshot/Screenshot2.png" width="250"> 
+<img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshot/todolistprovider.gif" width="250"> <img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshots/Screenshot1.png" width="250"> <img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshot/Screenshot2.png" width="250"> 
 
 <img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshot/Screenshot3.png" width="250"> <img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshot/Screenshot4.png" width="250"> <img src="https://github.com/DuhAlonso/todo_list_provider/blob/main/screenshot/Screenshot5.png" width="250"> 
 
