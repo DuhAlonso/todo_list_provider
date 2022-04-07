@@ -72,6 +72,11 @@ Olha, não foi fácil, aprendi e descobri inúmeras coisas, novas funcionalidade
 
 
 </br>
+
+<h2>Observação</h2>
+<p>
+É necessário criar o projeto no Google console e fazer o download dos arquivos <strong>google-services</strong> para que o app funcione e faça o login com o google.
+</p>
 </br>
 
 <p align="center">
